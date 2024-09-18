@@ -130,6 +130,7 @@ And enter your network password. You can now try
 # ping archlinux.org
 ```
 Here is the screenshot of what you should see
+
 ![PingArchLinux_org](./source/ping_ArchLinux.png)
 
 ### 2.3 Update the system clock
@@ -146,6 +147,7 @@ The following command will list all the disks and partitions on your system.
 ```
 You should see something similar to the next screenshot
 ![fdisk -l](./source/fdisk.png)
+
 You can see the disk `/dev/sda` is the one we will use. You can use the following command to choose the layout of the partitionning we will use. In our case GPT
 ```
 # fdisk /dev/sda
