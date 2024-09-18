@@ -1,0 +1,2 @@
+Arch Linux : login=Moon
+               mdp=moon
