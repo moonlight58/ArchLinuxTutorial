@@ -124,6 +124,7 @@ You will see a list or not of network name, like the following screenshot.
 Please select the one that fits the most your situation. After choosing your  network, run 
 ```
 [iwd]# station (the name of the device...) connect (the name of the network you choose)
+[iwd}# exit
 ```
 And enter your network password. You can now try 
 ```
