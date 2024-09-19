@@ -124,7 +124,6 @@ You will see a list or not of network name, like the following screenshot.
 Please select the one that fits the most your situation. After choosing your  network, run 
 ```
 [iwd]# station (the name of the device...) connect (the name of the network you choose)
-[iwd}# exit
 ```
 And enter your network password. You can now try 
 ```
@@ -159,3 +158,30 @@ Before being able to choose your layout, your screen should look like this
 You can hit the key `m` to show up the help menu. But in our case we'll need to hit the key `g` to choose the GPT layout and the key `w` to write/save the modification and exit.
 
 Now, we're going to partitionate the disk.
+```
+# cfdisk /dev/sda
+```
+![cfdisk](./source/cfdisk.png)
+
+Now you can see there is an option called Free space, it's a disk that has n amount of stockage free. We will use this one to partitionate what you need.
+
+You can move between the different options by using the arrow keys and select the option you want with `Enter` key.
+
+Now hit the `New` button with your `Enter` key. It will change to `Partition size :`. You enter the size you want, but I recommend you to put atleast 512M like the following screenshot.
+
+![512M /dev/sda1](./source/512M.png)
+
+After this,you'll need to switch to the `Type` button with your arrow keys and select it and change the current type `Linux filesystem` to `EFI System`  like the following screenshot.
+
+![EFI System](./source/EFI_System.png)
+
+ we'll need to hit a second time the `Free space` and put at least 1G, after setting the partition size on /dev/sda2, we will also change the type of /dev/sda2 to `Linux swap`, refer to the following screenshot.
+
+ ![Linux swap](
+ And finally, we'll hit a last time `Free space` and this will be our `/` partition, we will set the size to the rest of the disk. You can put the remaining size to this partition or any size you want or need.
+
+ After all of this, you should have something like this.
+
+ ![Final Partition](./source/final_partition.png)
+
+ Hit the `Write` button to write and save your progression and `Quit` after.
