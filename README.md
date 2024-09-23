@@ -148,7 +148,7 @@ The following command will list all the disks and partitions on your system.
 You should see something similar to the next screenshot
 ![fdisk -l](./source/fdisk.png)
 
-You can see the disk `/dev/sda` is the one we will use. You can use the following command to choose the layout of the partitionning we will use. In our case GPT
+You can see the disk `/dev/sda` is the one we will use. You can use the following command to choose the layout of the partitioning we will use. In our case GPT
 ```
 # fdisk /dev/sda
 ```
@@ -163,11 +163,11 @@ Now, we're going to partitionate the disk.
 ```
 ![cfdisk](./source/cfdisk.png)
 
-Now you can see there is an option called Free space, it's a disk that has n amount of stockage free. We will use this one to partitionate what you need.
+Now you can see there is an option called Free space, it's a disk that has n amount of free stockage. We will use this one to partition what we need.
 
 You can move between the different options by using the arrow keys and select the option you want with `Enter` key.
 
-Now hit the `New` button with your `Enter` key. It will change to `Partition size :`. You enter the size you want, but I recommend you to put atleast 512M like the following screenshot.
+Now hit the `New` button with your `Enter` key. It will change to `Partition size :`. You enter the size you want, but I recommend you to put at least 512M like the following screenshot.
 
 ![512M /dev/sda1](./source/512M.png)
 
@@ -175,13 +175,16 @@ After this,you'll need to switch to the `Type` button with your arrow keys and s
 
 ![EFI System](./source/EFI_System.png)
 
- we'll need to hit a second time the `Free space` and put at least 1G, after setting the partition size on /dev/sda2, we will also change the type of /dev/sda2 to `Linux swap`, refer to the following screenshot.
+We'll need to hit a second time the `Free space` and put at least 1G, after setting the partition size on /dev/sda2, we will also change the type of /dev/sda2 to `Linux swap`, refer to the following screenshot.
 
- ![Linux swap](
- And finally, we'll hit a last time `Free space` and this will be our `/` partition, we will set the size to the rest of the disk. You can put the remaining size to this partition or any size you want or need.
+![Linux swap](./source/Linux_swap.png)
+And finally, we'll hit a last time `Free space` and this will be our `/` partition, we will set the size to the rest of the disk. You can put the remaining size to this partition or any size you want or need.
 
- After all of this, you should have something like this.
+After all of this, you should have something like this.
 
- ![Final Partition](./source/final_partition.png)
+![Final Partition](./source/final_partition.png)
 
- Hit the `Write` button to write and save your progression and `Quit` after.
+Hit the `Write` button to write and save your progression and `Quit` after.
+
+
+
