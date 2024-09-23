@@ -17,7 +17,7 @@ Table of Content *(clickable link)*
 
 <details><summary>Note to the user, before you follow this tutorial (drop-down) </summary>
 
-I'm just a student trying new things, for example Arch Linux. This tutorial is not 100% bug proof (I can assure you it works tho...), i'm still trying Arch Linux and i'm not an expert of this distro. If you stumble upon problems I didn't cover up, please search on the official [Arch Linux documentation](https://wiki.archlinux.org/title/Installation_guide) or the [Arch Linux forums](https://bbs.archlinux.org/) or even on the internet in general. I'm not responsible if anything bad happens to your system while you're following this tutorial. As I said earlier, i'm still learning too Arch Linux, it's a way to teach the new people with this distro and help me learning too. Anyway, i hope you enjoy this tutorial and have fun with Arch Linux!
+I'm just a CS student trying new things, for example Arch Linux. This tutorial is not 100% bug proof (I can assure you it works tho...), i'm still trying Arch Linux and i'm not an expert of this distro. If you stumble upon problems I didn't cover up, please search on the official [Arch Linux documentation](https://wiki.archlinux.org/title/Installation_guide) or the [Arch Linux forums](https://bbs.archlinux.org/) or even on the internet in general. I'm not responsible if anything bad happens to your system while you're following this tutorial. As I said earlier, i'm still learning too Arch Linux, it's a way to teach the new people with this distro and help me learning too. Anyway, i hope you enjoy this tutorial and have fun with Arch Linux!
 
 
 If you have any tips/recommendation or even flaws inside my tutorial (since i'm not an expert, there are flaws that i'm not aware). Contact me either through [discord](https://discordapp.com/users/484713064655224854) or through my mail which is gael.rothlin@proton.me
@@ -30,7 +30,7 @@ Get the latest Arch Linux .iso, at this moment it is the "archlinux-2024.09.01-x
 ### 1.2 Boot System
 You can boot by many ways, here's the list on how you can boot Arch Linux on your computer :
 - USB Driver
-  - There's two way to install Arch Linux with a USB Driver, the first is for a full installation called a "Install Arch Linux on a removable medium" and the second option is installing Arch Linux as a rescue USB with "chroot" or "Rufus". Rufus is a utility for formatting and creating bootable USB media, such as USB sticks, flash memory and so on. (I, personally, use Rufus when doing Arch Linux Installation)
+  - There's two way to install Arch Linux with a USB Driver, the first is for a full installation called a "Install Arch Linux on a removable medium" and the second option is installing Arch Linux as a rescue USB with "chroot" or "Rufus". Rufus is a utility for formatting and creating bootable USB media, such as USB sticks, flash memory and so on. (I, personally, use Rufus when doing Linux Installation)
 - Optical Disc
   - I will not explain how to install Arch Linux with an optical disc, because it's not the most common way to install (maybe i'm wrong but i didn't heard much of this way inside the Arch community) and i'm not an expert with this way of installing Arch Linux
 - PXE (through network)
@@ -47,7 +47,7 @@ The Secure Boot can be disabled via the UEFI interface. You can access the firmw
 
 ## 2 Arch Linux Installation
 ### 2.1 Booting your Arch Linux .iso
-After choosing your Live System, you will find yourself to a similar menu of the following screenshot. If you have the same menu then you got an .iso with UEFI support (this menu is a grub menu). And if your menu is different don't panick, you got an .iso that has a BIOS support. To save some times to people who has a BIOS support, i'm not doing a tutorial for BIOS support for the moment but I will in the future, for now it will be a tutorial for UEFI support.
+After choosing your Live System, you will find yourself to a similar menu of the following screenshot. If you have the same menu then you got an .iso with UEFI support (this menu is a grub menu). And if your menu is different don't panic, you got an .iso that has a BIOS support. To save some times to people who has a BIOS support, i'm not doing a tutorial for BIOS support for the moment but I will in the future, for now it will be a tutorial for UEFI support.
 
 When you get to this menu, please select the one that says "Arch Linux install medium (x86_64, x64 UEFI)" or something similar if you don't have the same numbers as me.
 ![grub_boot](./source/grub_boot.png)
@@ -85,6 +85,11 @@ To verify the boot mode, you can run the command
 # cat /sys/firmware/efi/fw_platform_size
 ```
 If  the output is 0 then you are in BIOS mode, if the return is 32 then the system if booted is in UEFI mode and if the return is 64 then your UEFI is a 64-bits x64 UEFI.
+
+Important if you're doing a Arch Linux VM, if you don't see any output when searching the efi folder that's because you didn't enable the EFI option before launching the VM. To solve this problem, you'll need to close the VM. Go to the `configuration` window on your VMware and toggle on the `Activate EFI` and toggle off the secure boot like the following screenshot. And just reboot your VM right after it.
+
+![enable EFI/disable secure boot](./source/VM-enable-EFI-disable-secure-boot.png)
+
 
 And finally, you need to be connected to internet. You can do this by running the command
 ```
@@ -185,6 +190,8 @@ After all of this, you should have something like this.
 ![Final Partition](./source/final_partition.png)
 
 Hit the `Write` button to write and save your progression and `Quit` after.
+
+  
 
 
 
