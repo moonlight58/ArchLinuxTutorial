@@ -183,6 +183,7 @@ After this,you'll need to switch to the `Type` button with your arrow keys and s
 We'll need to hit a second time the `Free space` and put at least 1G, after setting the partition size on /dev/sda2, we will also change the type of /dev/sda2 to `Linux swap`, refer to the following screenshot.
 
 ![Linux swap](./source/Linux_swap.png)
+
 And finally, we'll hit a last time `Free space` and this will be our `/` partition, we will set the size to the rest of the disk. You can put the remaining size to this partition or any size you want or need.
 
 After all of this, you should have something like this.
