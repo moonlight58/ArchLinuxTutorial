@@ -14,10 +14,11 @@ Table of Content *(clickable link)*
       - [2.2.1 Connect by Wi-Fi](#221-connect-by-wi-fi)
     - [2.3 Update the system clock](#23-update-the-system-clock)
     - [2.4 Partitioning the disks](#24-partitioning-the-disks)
+    - [2.5 Format the partitions](#25-format-the-partitions)
 
 <details><summary>Note to the user, before you follow this tutorial (drop-down) </summary>
 
-I'm just a CS student trying new things, for example Arch Linux. I'm still trying Arch Linux and i'm not an expert of this distro. If you stumble upon problems I didn't cover up, please search on the official [Arch Linux documentation](https://wiki.archlinux.org/title/Installation_guide) or the [Arch Linux forums](https://bbs.archlinux.org/) or even on the internet in general. I'm not responsible if anything bad happens to your system while you're following this tutorial. As I said earlier, i'm still learning too Arch Linux, it's a way to teach the new people with this distro and help me learning too. Anyway, i hope you enjoy this tutorial and have fun with Arch Linux!
+I'm just a CS student trying new things, for example Arch Linux. This tutorial is not 100% bug proof (I can assure you it works tho...), i'm still trying Arch Linux and i'm not an expert of this distro. If you stumble upon problems I didn't cover up, please search on the official [Arch Linux documentation](https://wiki.archlinux.org/title/Installation_guide) or the [Arch Linux forums](https://bbs.archlinux.org/) or even on the internet in general. I'm not responsible if anything bad happens to your system while you're following this tutorial. As I said earlier, i'm still learning too Arch Linux, it's a way to teach the new people with this distro and help me learning too. Anyway, i hope you enjoy this tutorial and have fun with Arch Linux!
 
 
 If you have any tips/recommendation or even flaws inside my tutorial (since i'm not an expert, there are flaws that i'm not aware). Contact me either through [discord](https://discordapp.com/users/484713064655224854) or through my mail which is gael.rothlin@proton.me
@@ -183,7 +184,6 @@ After this,you'll need to switch to the `Type` button with your arrow keys and s
 We'll need to hit a second time the `Free space` and put at least 1G, after setting the partition size on /dev/sda2, we will also change the type of /dev/sda2 to `Linux swap`, refer to the following screenshot.
 
 ![Linux swap](./source/Linux_swap.png)
-
 And finally, we'll hit a last time `Free space` and this will be our `/` partition, we will set the size to the rest of the disk. You can put the remaining size to this partition or any size you want or need.
 
 After all of this, you should have something like this.
@@ -192,7 +192,24 @@ After all of this, you should have something like this.
 
 Hit the `Write` button to write and save your progression and `Quit` after.
 
-  
+### 2.5 Format the partitions
 
+When finishing the partitioning, you will need to format the partitions. You can use the following command to format
 
+```
+# mkfs.ext4 /dev/sda3
+```
 
+![Formatting into ext4](./source/mkfs_ext4.png)
+
+```
+# mkfs.fat -F 32 /dev/sda1
+```
+
+![Formatting into fat32](./source/mkfs_fat.png)
+
+```
+# mkfs.swap /dev/sda2
+```
+
+![Swap](./source/mkfs_swap.png)
